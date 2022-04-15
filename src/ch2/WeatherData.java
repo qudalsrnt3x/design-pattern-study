@@ -26,7 +26,7 @@ public class WeatherData implements Subject{
     @Override
     public void notifyObservers() { // 모든 옵저버에게 상태 변화를 알려주는 메서드
         for (Observer observer : observers) {
-            observer.update(temperature, humidity, pressure);
+            observer.update();
         }
     }
 
@@ -42,4 +42,15 @@ public class WeatherData implements Subject{
     }
 
     // 기타 WeatherData 메서드
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
 }
